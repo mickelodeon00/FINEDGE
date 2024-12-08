@@ -170,6 +170,10 @@
     @apply flex-center absolute -top-8 size-24 rounded-full bg-gray-100 border-8 border-white p-2 shadow-profile;
   }
 
+  .profile-image {
+    @apply size-24 rounded-full items-center flex justify-center bg-slate-200 border-8 border-white shadow-profile;
+  }
+
   .profile-details {
     @apply flex flex-col pt-24;
   }
