@@ -8,14 +8,12 @@ const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
       <div className="bg-gradient-mesh w-full h-24 bg-no-repeat bg-cover" />
       <div className="relative flex flex-col px-8 gap-4">
         <div className="-mt-10 profile-image">
-          <span className="text-5xl font-bold text-bankGradient">
-            {user.firstName[0]}
+          <span className="capitalize text-5xl font-bold text-bankGradient">
+            {user.name[0]}
           </span>
         </div>
         <div className="flex flex-col">
-          <h2 className="text-2xl text-gray-900 font-bold">
-            {user.firstName} {user.lastName}
-          </h2>
+          <h2 className="text-2xl text-gray-900 font-bold">{user.name}</h2>
           <p className="text-base text-gray-500">{user.email}</p>
         </div>
         <div className="flex flex-col gap-4">
@@ -35,14 +33,14 @@ const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
             <div className="w-[90%] z-10 ">
               <BankCard
                 account={banks[0]}
-                userName={`${user.firstName} ${user.lastName}`}
+                userName={`${user.name}`}
                 showBalance={false}
               />
             </div>
             <div className="w-[90%] absolute right-0 top-6 ">
               <BankCard
                 account={banks[1]}
-                userName={`${user.firstName} ${user.lastName}`}
+                userName={`${user.name}`}
                 showBalance={false}
               />
             </div>

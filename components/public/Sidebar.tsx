@@ -5,8 +5,10 @@ import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import SidebarFooter from './SidebarFooter';
 
 const Sidebar = ({ user }: { user: SiderbarProps }) => {
+  // console.log(user, 'UsER');
   const pathname = usePathname();
   return (
     <section className="sidebar">
@@ -55,7 +57,9 @@ const Sidebar = ({ user }: { user: SiderbarProps }) => {
             </Link>
           );
         })}
+        signOut
       </nav>
+      <SidebarFooter user={user} type={'desktop'} />
     </section>
   );
 };

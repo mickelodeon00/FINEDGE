@@ -1,14 +1,16 @@
 import RightSidebar from '@/components/home/RightSidebar';
 import HeaderBox from '@/components/public/HeaderBox';
 import TotalBalanceBox from '@/components/public/TotalBalanceBox';
+import { getLoggedInUser } from '@/lib/actions/user.actions';
+import { redirect } from 'next/navigation';
 import React from 'react';
 
-const Home = () => {
-  const loggedIn = {
-    firstName: 'Abdulsalam',
-    lastName: 'Quadri',
-    email: 'quadriabdulsalamT@mail.co',
-  };
+const Home = async () => {
+  const loggedIn = await getLoggedInUser();
+  if (!loggedIn) {
+    redirect('sign-in');
+  }
+
   const banks = [
     {
       bankName: 'SilverStone',
@@ -22,8 +24,8 @@ const Home = () => {
       <header className="home-content ">
         <HeaderBox
           type="greeting"
-          title="welcome"
-          user={loggedIn?.firstName}
+          title="Welcome"
+          user={loggedIn?.name}
           subtext="Access and manage your account transactions effectively"
         />
         <TotalBalanceBox

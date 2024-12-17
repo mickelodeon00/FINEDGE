@@ -15,6 +15,7 @@ import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import SidebarFooter from './SidebarFooter';
 
 const MobileNav = ({ user }: { user: MobileNavProps }) => {
   const pathname = usePathname();
@@ -92,7 +93,7 @@ const MobileNav = ({ user }: { user: MobileNavProps }) => {
                 USER
               </nav>
             </SheetClose>
-            FOOTER
+            <SidebarFooter user={user} type={'mobile'} />
           </div>
         </SheetContent>
       </Sheet>
